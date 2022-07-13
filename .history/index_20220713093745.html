@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="search">
+        <div class="inputContainer">
+          <h2>Busca tu pizza favorita</h2>
+          <h3>Ingresa su ID</h3>
+          <form action="">
+            <input class="inputSearch" type="number" name="" id="inputSearch" />
+            <button class="inputBtn">Buscar</button>
+          </form>
+        </div>
+        <div class="cardSearch">
+          <h2 class="nombre"></h2>
+          <h4 class="precio"></h4>
+        </div>
+      </section>
+      <section class="carro">
+        <div class="cartContainer"></div>
+      </section>
+      <section class="catalogo" id="catalogo">
+        <div class="cardCatalogo">
+          <img class="imgCatalogo" src="./imagenes/napolitana.jpg" alt="" />
+          <span class="numID">#1</span>
+          <h2>Napo</h2>
+          <h4>$1200</h4>
+          <a href="#"
+            ><button
+              data-img="./imagenes/napolitana.jpg"
+              data-name="Napo"
+              data-price="1200"
+              data-count="1"
+              class="btnCatalogo"
+              data-id="1"
+            >
+              Agregar
+            </button></a
+          >
+        </div>
+        <div class="cardCatalogo">
+          <img class="imgCatalogo" src="./imagenes/anana.jpg" alt="" />
+          <span class="numID">#2</span>
+          <h2>Polemica</h2>
+          <h4>$1300</h4>
+          <a href="#"
+            ><button
+              data-img="./imagenes/anana.jpg"
+              data-name="Polemica"
+              data-price="1300"
+              data-count="1"
+              class="btnCatalogo"
+              data-id="2"
+            >
+              Agregar
+            </button></a
+          >
+        </div>
+        <div class="cardCatalogo">
+          <img class="imgCatalogo" src="./imagenes/muzza.jpg" alt="" />
+          <span class="numID">#3</span>
+          <h2>Muzza</h2>
+          <h4>$500</h4>
+          <a href="#"
+            ><button
+              data-img="./imagenes/muzza.jpg"
+              data-name="Muzza"
+              data-price="500"
+              data-count="1"
+              class="btnCatalogo"
+              data-id="3"
+            >
+              Agregar
+            </button></a
+          >
+        </div>
+        <div class="cardCatalogo">
+          <img class="imgCatalogo" src="./imagenes/morrones.jpg" alt="" />
+          <span class="numID">#4</span>
+          <h2>Morrones</h2>
+          <h4>$1200</h4>
+          <a href="#"
+            ><button
+              data-img="./imagenes/morrones.jpg"
+              data-name="Morrones"
+              data-price="1200"
+              data-count="1"
+              class="btnCatalogo"
+              data-id="4"
+            >
+              Agregar
+            </button></a
+          >
+        </div>
+        <div class="cardCatalogo">
+          <img class="imgCatalogo" src="./imagenes/cuatroquesos.jpg" alt="" />
+          <span class="numID">#5</span>
+          <h2>Cuatro Quesos</h2>
+          <h4>$1400</h4>
+          <a href="#"
+            ><button
+              data-img="./imagenes/cuatroquesos.jpg"
+              data-name="Cuatro quesos"
+              data-price="1400"
+              data-count="1"
+              class="btnCatalogo"
+              data-id="5"
+            >
+              Agregar
+            </button></a
+          >
+        </div>
+        <div class="cardCatalogo">
+          <img class="imgCatalogo" src="./imagenes/fugazeta.jpg" alt="" />
+          <span class="numID">#6</span>
+          <h2>Fugazzeta</h2>
+          <h4>$1200</h4>
+          <a href="#"
+            ><button
+              data-img="./imagenes/fugazeta.jpg"
+              data-name="Fugazzeta"
+              data-price="1200"
+              data-count="1"
+              class="btnCatalogo"
+              data-id="6"
+            >
+              Agregar
+            </button></a
+          >
+        </div>
+      </section>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        font-family: "Finlandica", sans-serif;
+        background: url(./imagenes/madera3.jpg);
+      }
+      :root {
+        /* Paleta colores */
+        --naranja: rgb(255, 159, 28);
+        --naranjasoft: rgb(255, 191, 105);
+        --blanco: rgb(255, 255, 255);
+        --celestesoft: rgb(203, 243, 240);
+        --celeste: rgb(46, 196, 182);
+        --azul: rgb(2, 48, 71);
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+      }
+      
+      @media (max-width: 480px) {
+        /* Diseño header y nav */
+        .header {
+          background: var(--azul);
+          color: var(--blanco);
+          width: auto;
+          height: 10rem;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          box-shadow: 2px 2px 2px 1px black;
+          transition: top 0.5s;
+        }
+        .menu {
+          display: flex;
+          list-style: none;
+          width: 100%;
+        }
+        .navBar {
+          display: flex;
+        }
+        .item {
+          display: none;
+          color: var(--blanco);
+          padding: 0.5rem;
+          text-align: center;
+          border-radius: 0.8rem;
+          width: 100%;
+          justify-content: center;
+          cursor: pointer;
+          text-decoration: none;
+        }
+        .linkNav {
+          text-decoration: none;
+          color: aliceblue;
+        }
+      
+        .btn__container {
+          display: flex;
+          color: aliceblue;
+          justify-content: flex-end;
+          width: 80%;
+        }
+        .containerItems {
+          display: flex;
+          flex-direction: column;
+          position: relative;
+          top: 10.5rem;
+          left: -3.5rem;
+          justify-content: center;
+          align-items: center;
+          background: rgba(0, 0, 0, 0.9);
+          border-radius: 0.8rem;
+          width: 80vw;
+          color: aliceblue;
+          gap: 0.5rem;
+        }
+        .show {
+          display: flex;
+        }
+        .btn-cont {
+          text-decoration: none;
+          color: aliceblue;
+          font-size: 2rem;
+        }
+        /* Diseño main page */
+        .main {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100vw;
+        }
+        .logo {
+          margin-left: 2rem;
+        }
+        /* Diseño Hero section */
+        .hero {
+          display: flex;
+          flex-direction: column;
+          width: 20rem;
+          gap: 2rem;
+          justify-content: center;
+          align-items: center;
+          margin-top: 6rem;
+        }
+        .imgHero {
+          width: 18rem;
+          border-radius: 1rem;
+        }
+        .infoHero {
+          font-size: 1.5rem;
+          text-align: center;
+          background: rgba(0, 0, 0, 0.4);
+          border-radius: 0.8rem;
+          width: 18rem;
+          color: aliceblue;
+        }
+        /* Diseño buscador pizzas */
+        .search {
+          margin-top: 3rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .inputContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          gap: 1rem;
+          height: 12rem;
+          border-radius: 0.8rem;
+          background: rgba(0, 0, 0, 0.6);
+          color: aliceblue;
+          font-size: 1.4rem;
+          width: 18rem;
+        }
+        /* Diseño catalogo pizzas */
+        .catalogo {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          gap: 2rem;
+          align-items: center;
+          justify-content: center;
+          margin-top: 3rem;
+        }
+        .cardCatalogo {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 12rem;
+          height: 20rem;
+          border: solid 1px var(--azul);
+          border-radius: 0.8rem;
+          gap: 1rem;
+          color: aliceblue;
+          padding: 5px;
+          background: rgba(0, 0, 0, 0.4);
+        }
+        .btnCatalogo {
+          width: 5rem;
+          height: 2rem;
+          background: var(--azul);
+          color: aliceblue;
+          font-family: "Finlandica", sans-serif;
+          border: none;
+          border-radius: 5px;
+          padding: 5px;
+          margin-top: 5px;
+          cursor: pointer;
+        }
+        .imgCatalogo {
+          width: 8rem;
+          border-radius: 0.8rem;
+        }
+        .footer {
+          margin-top: 2rem;
+          color: aliceblue;
+          margin-bottom: 1rem;
+        }
+        .cartList2 {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+          width: 90vw;
+          height: auto;
+          background: rgba(0, 0, 0, 0.6);
+          border-radius: 0.8rem;
+          color: var(--blanco);
+          margin-top: 1rem;
+          padding: 1rem;
+        }
+        .cartList2 h3 {
+          font-size: 0.8rem;
+          width: 100%;
+        }
+        .borrar {
+          background: var(--celeste);
+          color: var(--azul);
+          width: 1.5rem;
+          font-size: 1rem;
+          border-radius: 0.8rem;
+          position: relative;
+          top: -7.1rem;
+          left: 7rem;
+          cursor: pointer;
+        }
+        .contacto {
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          flex-direction: column;
+          height: 20rem;
+          background: rgba(0, 0, 0, 0.4);
+          background-size: contain;
+          border-radius: 0.8rem;
+          gap: 1rem;
+          color: var(--blanco);
+          text-align: center;
+        }
+        .contacto input {
+          width: 16rem;
+          height: 2rem;
+          border-radius: 0.8rem;
+          text-align: center;
+        }
+        .carrito {
+          width: 60%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-top: 3.5rem;
+          margin-bottom: 2rem;
+          background: rgba(250, 250, 250, 0.6);
+          border-radius: 0.8rem;
+          height: auto;
+          padding: 1rem;
+          text-align: center;
+          gap: 1rem;
+        }
+        .borrarCart {
+          background: var(--celeste);
+          color: var(--azul);
+          width: 1.5rem;
+          font-size: 1rem;
+          border-radius: 0.8rem;
+          position: relative;
+          top: -18rem;
+          left: 6rem;
+          cursor: pointer;
+        }
+        .cart__btn {
+          width: 10rem;
+          height: 2.5rem;
+          border-radius: 0.8rem;
+          background: var(--azul);
+          color: aliceblue;
+        }
+      }
+      
+      .error {
+        background: var(--celeste);
+        color: white;
+        padding: 2px 13px;
+        position: relative;
+        right: 0px;
+        top: -50px;
+        border-radius: 10px;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .cartlist2 {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        width: 30rem;
+        height: 5rem;
+        background: var(--azul);
+        border-radius: 0.8rem;
+        color: var(--blanco);
+        margin-top: 1rem;
+      }
+      @media (min-width: 480px) {
+        /* Diseño header y nav */
+        .header {
+          background: var(--azul);
+          color: var(--blanco);
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          position: fixed;
+          top: 0;
+          transition: top 0.5s;
+          box-shadow: 2px 2px 2px 1px black;
+          z-index: 3;
+        }
+        .menu {
+          display: flex;
+          gap: 2rem;
+          list-style: none;
+        }
+        .btn__container {
+          display: none;
+        }
+        .containerItems {
+          display: flex;
+          gap: 2rem;
+        }
+        .show {
+          display: flex;
+        }
+        .linkNav {
+          text-decoration: none;
+          color: var(--blanco);
+          font-size: 1.2rem;
+        }
+        /* Diseño main page */
+        .main {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100vw;
+        }
+        /* Diseño Hero section */
+        .hero {
+          display: flex;
+          width: 90vw;
+          gap: 2rem;
+          justify-content: center;
+          align-items: center;
+          margin-top: 9rem;
+        }
+        .imgHero {
+          width: 40rem;
+          border-radius: 1rem;
+        }
+        .infoHero {
+          font-size: 2rem;
+          text-align: center;
+          background: rgba(0, 0, 0, 0.4);
+          border-radius: 0.8rem;
+          width: 24rem;
+          color: aliceblue;
+        }
+        /* Diseño buscador pizzas */
+        .search {
+          margin-top: 3rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+        .inputContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 1rem;
+          width: 40vw;
+          height: 12rem;
+          border-radius: 0.8rem;
+          background: rgba(0, 0, 0, 0.6);
+          color: aliceblue;
+          font-size: 1.4rem;
+        }
+        .inputSearch {
+          width: 5rem;
+          height: 2rem;
+          border-radius: 0.8rem;
+          background: var(--celestesoft);
+          text-align: center;
+          box-shadow: 2px 2px 2px 1px var(--celeste);
+        }
+        .inputBtn {
+          width: 5rem;
+          height: 2rem;
+          border: none;
+          border-radius: 0.8rem;
+          cursor: pointer;
+          box-shadow: 2px 2px 2px 1px var(--celeste);
+        }
+        /* Diseño catalogo pizzas */
+        .catalogo {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 2rem;
+          align-items: center;
+          justify-content: center;
+          margin-top: 3rem;
+        }
+        .cardCatalogo {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 16rem;
+          height: 20rem;
+          border: solid 1px var(--naranjasoft);
+          border-radius: 0.8rem;
+          box-shadow: 1px 1px 1px 1px var(--azul);
+          background: rgba(0, 0, 0, 0.8);
+          color: aliceblue;
+        }
+        .cardCatalogo:hover {
+          background: var(--blanco);
+          transition: all 0.5s ease;
+          box-shadow: 1px 1px 1px 1px var(--azul);
+          color: var(--azul);
+        }
+        .numID {
+          position: relative;
+          top: -8rem;
+          left: 6rem;
+          background: var(--azul);
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          text-align: center;
+          color: var(--blanco);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        .imgCatalogo {
+          width: 12rem;
+          height: 10rem;
+          border-radius: 0.8rem;
+        }
+        /* Diseño Footer */
+        .footer {
+          margin-top: 2rem;
+          color: aliceblue;
+        }
+        .cartList2 {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+          width: 30rem;
+          height: auto;
+          background: rgba(0, 0, 0, 0.6);
+          border-radius: 0.8rem;
+          color: var(--blanco);
+          margin-top: 1rem;
+          padding: 1rem;
+        }
+        .btnCatalogo {
+          width: 5rem;
+          height: 2rem;
+          background: var(--azul);
+          color: aliceblue;
+          font-family: "Finlandica", sans-serif;
+          border: none;
+          border-radius: 5px;
+          padding: 5px;
+          margin-top: 5px;
+          cursor: pointer;
+          box-shadow: 1px 1px 1px 1px var(--celeste);
+        }
+        .borrar {
+          background: var(--celeste);
+          color: var(--azul);
+          width: 1.5rem;
+          font-size: 1rem;
+          border-radius: 0.8rem;
+          position: relative;
+          top: -7.5rem;
+          left: 14rem;
+          cursor: pointer;
+        }
+        .contacto {
+          width: 100%;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          flex-direction: column;
+          height: 20rem;
+          background: rgba(0, 0, 0, 0.4);
+          background-size: contain;
+          border-radius: 0.8rem;
+          gap: 1rem;
+          color: var(--blanco);
+        }
+        .contacto input {
+          width: 20rem;
+          height: 2rem;
+          border-radius: 0.8rem;
+          text-align: center;
+        }
+        .carrito {
+          width: 60%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          margin-top: 3.5rem;
+          margin-bottom: 2rem;
+          background: rgba(250, 250, 250, 0.6);
+          border-radius: 0.8rem;
+          height: auto;
+          padding: 1rem;
+          text-align: center;
+          gap: 1rem;
+        }
+        .borrarCart {
+          background: var(--celeste);
+          color: var(--azul);
+          width: 1.5rem;
+          font-size: 1rem;
+          border-radius: 0.8rem;
+          position: relative;
+          top: -18rem;
+          left: 8rem;
+          cursor: pointer;
+        }
+      }
+          <script src="main.js"></script>
+        </div>
+      </section>  
+</body>
+</html>
